@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,35 +7,35 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 18%;
+    --background: 240 30% 99%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 18%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 18%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 217 91% 60%;
+    --primary: 199 84% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 14% 95%;
-    --secondary-foreground: 215 25% 18%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 215 14% 95%;
-    --muted-foreground: 215 8% 50%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 56%;
 
-    --accent: 225 95% 65%;
+    --accent: 262 83% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 16% 90%;
-    --input: 215 16% 90%;
-    --ring: 217 91% 60%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 199 84% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
   }
 }
 
@@ -48,7 +48,7 @@
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-semibold tracking-tight;
+    @apply font-heading font-medium tracking-tight;
   }
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
@@ -66,29 +66,33 @@
     @apply text-base leading-relaxed;
   }
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-16 md:py-24;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white rounded-2xl shadow-soft p-6 transition-all hover:shadow-glass;
+    @apply bg-white rounded-lg shadow-soft p-6 transition-all hover:shadow-glass;
   }
   .btn-primary {
-    @apply bg-accent-blue text-white px-6 py-3 rounded-xl font-medium hover:bg-accent-blue/90 transition-all shadow-soft hover:shadow-neon;
+    @apply bg-accent-blue text-white px-5 py-2.5 rounded-md font-medium hover:bg-accent-blue/90 transition-all shadow-soft hover:shadow-neon;
   }
   .nav-link {
-    @apply relative text-dark-grey opacity-80 hover:opacity-100 after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-accent-blue after:left-0 after:-bottom-1 hover:after:w-full after:transition-all;
+    @apply relative text-dark-grey/80 hover:text-dark-grey after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-accent-blue after:left-0 after:-bottom-1 hover:after:w-full after:transition-all;
   }
   .nav-link.active {
-    @apply opacity-100 after:w-full;
+    @apply text-dark-grey after:w-full;
   }
   
   .glass-card {
-    @apply bg-white/70 backdrop-blur-md rounded-2xl border border-white/30 shadow-glass;
+    @apply bg-white/60 backdrop-blur-md rounded-lg border border-white/30 shadow-soft;
   }
   
   .gradient-text {
     @apply bg-gradient-accent bg-clip-text text-transparent;
+  }
+  
+  .minimal-card {
+    @apply bg-white rounded-lg p-5 transition-all border border-light-grey/50 hover:border-accent-blue/20 hover:shadow-soft;
   }
 }
