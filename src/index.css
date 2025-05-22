@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,35 +7,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
+    --background: 210 20% 98%;
+    --foreground: 215 25% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 215 25% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 215 25% 18%;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 215 14% 95%;
+    --secondary-foreground: 215 25% 18%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 215 14% 95%;
+    --muted-foreground: 215 8% 50%;
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 225 95% 65%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 215 16% 90%;
+    --input: 215 16% 90%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
@@ -45,9 +45,10 @@
   }
   body {
     @apply bg-off-white text-dark-grey font-body;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-semibold;
+    @apply font-heading font-semibold tracking-tight;
   }
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
@@ -65,21 +66,29 @@
     @apply text-base leading-relaxed;
   }
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white rounded-lg shadow-sm p-6 transition-all hover:shadow-md;
+    @apply bg-white rounded-2xl shadow-soft p-6 transition-all hover:shadow-glass;
   }
   .btn-primary {
-    @apply bg-dark-grey text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-opacity;
+    @apply bg-accent-blue text-white px-6 py-3 rounded-xl font-medium hover:bg-accent-blue/90 transition-all shadow-soft hover:shadow-neon;
   }
   .nav-link {
-    @apply relative text-dark-grey opacity-80 hover:opacity-100 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-dark-grey after:left-0 after:-bottom-1 hover:after:w-full after:transition-all;
+    @apply relative text-dark-grey opacity-80 hover:opacity-100 after:content-[''] after:absolute after:w-0 after:h-[3px] after:bg-accent-blue after:left-0 after:-bottom-1 hover:after:w-full after:transition-all;
   }
   .nav-link.active {
     @apply opacity-100 after:w-full;
+  }
+  
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md rounded-2xl border border-white/30 shadow-glass;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-accent bg-clip-text text-transparent;
   }
 }

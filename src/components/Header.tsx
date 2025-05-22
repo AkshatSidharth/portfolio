@@ -1,10 +1,20 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -21,20 +31,26 @@ const Header = () => {
   };
 
   return (
-    <header className="border-b border-light-grey py-4">
+    <header 
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'py-3 bg-white/80 backdrop-blur-lg shadow-soft' 
+          : 'py-5 bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="font-heading text-xl font-bold">
+          <Link to="/" className="font-heading text-xl font-bold gradient-text">
             PM Portfolio
           </Link>
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden"
+            className="md:hidden p-2 rounded-lg hover:bg-light-grey/50 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -59,7 +75,7 @@ const Header = () => {
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-2 flex flex-col space-y-4">
+          <nav className="md:hidden mt-4 pb-2 flex flex-col space-y-4 bg-white/95 backdrop-blur-lg rounded-2xl p-4 shadow-soft animate-slide-up">
             {navItems.map((item) => (
               <Link
                 key={item.name}

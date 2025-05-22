@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { Button } from "@/components/ui/button";
@@ -62,29 +61,28 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="container mx-auto max-w-6xl px-4 py-16">
-      <div 
-        className="mb-12 text-center animate-fade-in"
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-dark-grey to-medium-grey bg-clip-text text-transparent">
+    <div className="container mx-auto max-w-6xl px-4 py-20">
+      <div className="mb-16 text-center">
+        <span className="inline-block text-accent-blue font-medium mb-3">Portfolio Collection</span>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text leading-tight">
           Product Projects
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-medium-grey max-w-2xl mx-auto">
           A curated collection of product initiatives I've led across various industries, 
           demonstrating my approach to solving complex challenges.
         </p>
       </div>
 
-      <Tabs defaultValue="all" className="mb-16">
-        <div className="flex justify-center mb-8">
-          <TabsList className="bg-light-grey/50">
-            <TabsTrigger value="all" className="text-sm">All Projects</TabsTrigger>
-            <TabsTrigger value="featured" className="text-sm">
-              <Star className="mr-1 h-4 w-4" />
+      <Tabs defaultValue="all" className="mb-20">
+        <div className="flex justify-center mb-10">
+          <TabsList className="bg-light-grey/60 backdrop-blur-sm p-1.5 rounded-xl">
+            <TabsTrigger value="all" className="text-sm rounded-lg px-5 py-2.5">All Projects</TabsTrigger>
+            <TabsTrigger value="featured" className="text-sm rounded-lg px-5 py-2.5">
+              <Star className="mr-1.5 h-4 w-4" />
               Featured
             </TabsTrigger>
-            <TabsTrigger value="case-studies" className="text-sm">
-              <BookOpen className="mr-1 h-4 w-4" />
+            <TabsTrigger value="case-studies" className="text-sm rounded-lg px-5 py-2.5">
+              <BookOpen className="mr-1.5 h-4 w-4" />
               With Case Studies
             </TabsTrigger>
           </TabsList>
@@ -95,8 +93,7 @@ const Projects = () => {
             {projectsData.map((project, index) => (
               <div
                 key={project.id}
-                className="animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+                style={{ animationDelay: `${index * 150}ms` }}
               >
                 <ProjectCard {...project} />
               </div>
@@ -111,8 +108,7 @@ const Projects = () => {
               .map((project, index) => (
                 <div
                   key={project.id}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <ProjectCard {...project} />
                 </div>
@@ -127,8 +123,7 @@ const Projects = () => {
               .map((project, index) => (
                 <div
                   key={project.id}
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <ProjectCard {...project} />
                 </div>
@@ -138,19 +133,18 @@ const Projects = () => {
       </Tabs>
 
       <div 
-        className="text-center py-12 bg-gradient-to-b from-transparent to-light-grey/30 rounded-xl px-6 animate-fade-in"
-        style={{ animationDelay: '300ms' }}
+        className="glass-card text-center py-12 px-6 mx-auto max-w-4xl animate-fade-in"
       >
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">Interested in my approach?</h2>
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4 gradient-text">Interested in my approach?</h2>
+        <p className="text-lg text-medium-grey mb-8 max-w-2xl mx-auto">
           These projects showcase my product management philosophy. I'm always open to discussing 
           new challenges or providing more detailed insights into my work.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button size="lg" variant="default">
+          <Button size="lg" variant="default" className="bg-accent-blue hover:bg-accent-blue/90 shadow-soft hover:shadow-neon transition-all">
             Download Portfolio
           </Button>
-          <Button size="lg" variant="outline" asChild>
+          <Button size="lg" variant="outline" asChild className="border-accent-blue/20 hover:bg-accent-blue/5 text-accent-blue">
             <a href="mailto:contact@pmportfolio.com">Contact Me</a>
           </Button>
         </div>
