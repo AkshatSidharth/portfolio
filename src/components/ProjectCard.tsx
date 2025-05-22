@@ -1,6 +1,5 @@
 
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -20,11 +19,8 @@ const ProjectCard = ({
   skills
 }: ProjectCardProps) => {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="h-full"
+    <div 
+      className="opacity-100 transition-all duration-500 h-full" 
     >
       <Link to={`/projects/${id}`} className="block h-full">
         <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-all duration-300">
@@ -54,7 +50,7 @@ const ProjectCard = ({
           </CardContent>
         </Card>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 

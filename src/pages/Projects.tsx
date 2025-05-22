@@ -1,7 +1,6 @@
 
 import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
-import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Star } from "lucide-react";
@@ -64,11 +63,8 @@ const Projects = () => {
 
   return (
     <div className="container mx-auto max-w-6xl px-4 py-16">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-12 text-center"
+      <div 
+        className="mb-12 text-center animate-fade-in"
       >
         <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-dark-grey to-medium-grey bg-clip-text text-transparent">
           Product Projects
@@ -77,7 +73,7 @@ const Projects = () => {
           A curated collection of product initiatives I've led across various industries, 
           demonstrating my approach to solving complex challenges.
         </p>
-      </motion.div>
+      </div>
 
       <Tabs defaultValue="all" className="mb-16">
         <div className="flex justify-center mb-8">
@@ -97,14 +93,13 @@ const Projects = () => {
         <TabsContent value="all" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projectsData.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <ProjectCard {...project} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </TabsContent>
@@ -114,14 +109,13 @@ const Projects = () => {
             {projectsData
               .filter(project => project.category === 'featured')
               .map((project, index) => (
-                <motion.div
+                <div
                   key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <ProjectCard {...project} />
-                </motion.div>
+                </div>
               ))}
           </div>
         </TabsContent>
@@ -131,24 +125,21 @@ const Projects = () => {
             {projectsData
               .filter(project => ['project-1', 'project-3'].includes(project.id))
               .map((project, index) => (
-                <motion.div
+                <div
                   key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <ProjectCard {...project} />
-                </motion.div>
+                </div>
               ))}
           </div>
         </TabsContent>
       </Tabs>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-center py-12 bg-gradient-to-b from-transparent to-light-grey/30 rounded-xl px-6"
+      <div 
+        className="text-center py-12 bg-gradient-to-b from-transparent to-light-grey/30 rounded-xl px-6 animate-fade-in"
+        style={{ animationDelay: '300ms' }}
       >
         <h2 className="text-2xl md:text-3xl font-semibold mb-4">Interested in my approach?</h2>
         <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -163,7 +154,7 @@ const Projects = () => {
             <a href="mailto:contact@pmportfolio.com">Contact Me</a>
           </Button>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
