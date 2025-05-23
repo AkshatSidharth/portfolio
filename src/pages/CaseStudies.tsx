@@ -30,20 +30,20 @@ const caseStudiesData = [
     tags: ["Data Visualization", "BFSI", "Compliance", "Performance Tracking"]
   },
   {
-    id: "b2c-platform",
-    title: "B2C Hiring & Skill Building Platform",
-    company: "AntWalk",
-    description: "A case study on developing an integrated platform combining job search with personalized learning resources.",
-    image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?q=80&w=1000",
-    tags: ["B2C Products", "Hiring Platforms", "Skill Development", "User Acquisition"]
-  },
-  {
     id: "saas-pricing",
     title: "Data-Driven SaaS Pricing Strategy",
     company: "Think Talent Services",
     description: "How we optimized our pricing model to increase average contract value while maintaining customer satisfaction.",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1000",
     tags: ["SaaS Pricing", "Revenue Optimization", "Market Research", "Customer Value"]
+  },
+  {
+    id: "b2c-platform",
+    title: "B2C Hiring & Skill Building Platform",
+    company: "AntWalk",
+    description: "A case study on developing an integrated platform combining job search with personalized learning resources.",
+    image: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?q=80&w=1000",
+    tags: ["B2C Products", "Hiring Platforms", "Skill Development", "User Acquisition"]
   }
 ];
 
@@ -62,20 +62,8 @@ const CaseStudies = () => {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">Featured Case Studies</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {caseStudiesData.slice(0, 2).map((caseStudy) => (
-            <div key={caseStudy.id} className="animate-fade-in">
-              <CaseStudyCard {...caseStudy} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6">Additional Case Studies</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {caseStudiesData.slice(2).map((caseStudy, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {caseStudiesData.map((caseStudy, index) => (
             <div 
               key={caseStudy.id} 
               className="animate-fade-in"

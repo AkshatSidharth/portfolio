@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { Button } from "@/components/ui/button";
@@ -35,22 +36,6 @@ const projectsData = [
     description: "Recommendation engine for learning content based on user behavior, progress, and career goals to enhance engagement.",
     image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1000",
     skills: ["Machine Learning", "Personalization", "EdTech", "User Retention"],
-    category: "analytics"
-  },
-  {
-    id: "project-5",
-    title: "Learning Marketplace",
-    description: "Platform for industry experts to create, market and sell specialized learning programs to enterprise customers.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000",
-    skills: ["Marketplace Development", "Content Management", "Monetization", "B2B Platform"],
-    category: "featured"
-  },
-  {
-    id: "project-6",
-    title: "Digital Assessment Tool",
-    description: "Customizable assessment framework for enterprises to evaluate and develop talent across various competencies.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000",
-    skills: ["Assessment Design", "Skill Mapping", "Data Analytics", "Enterprise Solutions"],
     category: "analytics"
   }
 ];
