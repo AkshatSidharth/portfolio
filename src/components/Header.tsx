@@ -34,14 +34,15 @@ const Header = () => {
     <header 
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'py-3 bg-white/80 backdrop-blur-md shadow-soft' 
+          ? 'py-3 bg-white/95 backdrop-blur-sm border-b border-light-grey/30' 
           : 'py-5 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="font-heading text-lg font-semibold">
-            <span className="gradient-text">PM Portfolio</span>
+          <Link to="/" className="font-heading text-lg font-semibold text-off-black group">
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">Akshat Sidharth</span>
+            <span className="block text-xs text-medium-grey font-normal mt-0.5">Product Manager</span>
           </Link>
           
           {/* Mobile menu button */}
@@ -52,9 +53,9 @@ const Header = () => {
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
               {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
@@ -75,7 +76,7 @@ const Header = () => {
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-2 flex flex-col space-y-4 bg-white/95 backdrop-blur-md rounded-lg p-4 shadow-soft animate-slide-up">
+          <nav className="md:hidden mt-4 pb-2 flex flex-col space-y-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-subtle animate-slide-up">
             {navItems.map((item) => (
               <Link
                 key={item.name}

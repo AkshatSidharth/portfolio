@@ -19,24 +19,28 @@ const ProjectCard = ({
   skills
 }: ProjectCardProps) => {
   return (
-    <div className="h-full animate-fade-in">
+    <div className="h-full animate-fade-in group">
       <Link to={`/projects/${id}`} className="block h-full">
-        <Card className="overflow-hidden h-full flex flex-col hover:shadow-glass border border-light-grey/30 hover:border-accent-blue/20 transition-all duration-300">
+        <Card className="overflow-hidden h-full flex flex-col hover-lift border-light-grey/30 group-hover:border-dark-grey/30">
           <div className="overflow-hidden relative aspect-video">
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-off-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute top-3 right-3">
-              <Badge variant="secondary" className="bg-white/80 backdrop-blur-sm text-dark-grey text-xs font-medium">
-                View Details
+              <Badge variant="secondary" className="bg-white/90 backdrop-blur-sm text-dark-grey text-xs font-medium">
+                View Project
               </Badge>
             </div>
           </div>
           
           <CardContent className="p-5 flex flex-col flex-grow">
-            <h3 className="text-lg font-medium mb-2 text-foreground">{title}</h3>
+            <div className="mb-3">
+              <div className="w-8 h-0.5 bg-dark-grey mb-2 transition-all duration-300 group-hover:w-12"></div>
+              <h3 className="text-lg font-medium mb-2 text-off-black">{title}</h3>
+            </div>
             <p className="text-sm text-medium-grey mb-4 flex-grow line-clamp-3">{description}</p>
             
             <div className="flex flex-wrap gap-1.5 mt-auto">
@@ -44,7 +48,7 @@ const ProjectCard = ({
                 <Badge 
                   key={index}
                   variant="outline"
-                  className="bg-secondary/50 text-medium-grey text-xs font-normal"
+                  className="bg-light-grey/10 text-medium-grey text-xs font-normal"
                 >
                   {skill}
                 </Badge>
