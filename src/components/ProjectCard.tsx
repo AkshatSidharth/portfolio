@@ -19,36 +19,28 @@ const ProjectCard = ({
   skills
 }: ProjectCardProps) => {
   return (
-    <div className="h-full animate-fade-in group">
+    <div className="opacity-100 transition-all duration-500 h-full group">
       <Link to={`/projects/${id}`} className="block h-full">
-        <Card className="overflow-hidden h-full flex flex-col hover-lift border-light-grey/30 group-hover:border-dark-grey/30">
-          <div className="overflow-hidden relative aspect-video">
+        <Card className="overflow-hidden h-full flex flex-col hover:shadow-xl transition-all duration-300 border-transparent hover:border-light-grey">
+          <div className="overflow-hidden aspect-video relative">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+              className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-off-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="absolute top-3 right-3">
-              <Badge variant="secondary" className="bg-white/90 backdrop-blur-sm text-dark-grey text-xs font-medium">
-                View Project
-              </Badge>
-            </div>
           </div>
           
-          <CardContent className="p-5 flex flex-col flex-grow">
-            <div className="mb-3">
-              <div className="w-8 h-0.5 bg-dark-grey mb-2 transition-all duration-300 group-hover:w-12"></div>
-              <h3 className="text-lg font-medium mb-2 text-off-black">{title}</h3>
-            </div>
-            <p className="text-sm text-medium-grey mb-4 flex-grow line-clamp-3">{description}</p>
+          <CardContent className="p-6 flex flex-col flex-grow bg-background/90 backdrop-blur-sm">
+            <h3 className="text-xl font-medium mb-3 text-foreground group-hover:text-primary transition-colors duration-300">{title}</h3>
+            <p className="text-muted-foreground mb-5 flex-grow line-clamp-3">{description}</p>
             
-            <div className="flex flex-wrap gap-1.5 mt-auto">
-              {skills.slice(0, 3).map((skill, index) => (
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {skills.map((skill, index) => (
                 <Badge 
                   key={index}
                   variant="outline"
-                  className="bg-light-grey/10 text-medium-grey text-xs font-normal"
+                  className="bg-background text-foreground/80 text-xs font-normal hover:bg-accent/50 transition-colors"
                 >
                   {skill}
                 </Badge>
