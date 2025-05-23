@@ -3,56 +3,56 @@ import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Star } from "lucide-react";
+import { Briefcase, Star, LineChart, ShoppingBag } from "lucide-react";
 
 const projectsData = [
   {
     id: "project-1",
-    title: "Mobile Banking App Redesign",
-    description: "Led product development for a complete mobile banking app redesign focused on improving user experience and adding new functionality.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000",
-    skills: ["UX Research", "Product Strategy", "Agile Development"],
+    title: "Customer Data & Engagement Platform",
+    description: "A unified platform for sports organizations to collect, analyze and activate customer data across touchpoints.",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000",
+    skills: ["Customer Data Platforms", "Engagement Automation", "Analytics Dashboard", "Sports Tech"],
     category: "featured"
   },
   {
     id: "project-2",
-    title: "Customer Analytics Dashboard",
-    description: "Developed a comprehensive analytics dashboard to help business users gain insights from customer data without requiring technical knowledge.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000",
-    skills: ["Data Visualization", "User Testing", "Requirement Gathering"],
+    title: "Predictive Analytics for Sports",
+    description: "Machine learning models to predict athlete performance metrics and provide actionable insights for training optimization.",
+    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=1000",
+    skills: ["ML/AI", "Sports Analytics", "Performance Optimization", "Data Visualization"],
     category: "analytics"
   },
   {
     id: "project-3",
-    title: "E-commerce Shopping Experience",
-    description: "Enhanced the shopping experience for an e-commerce platform, focusing on product discovery, recommendations, and checkout optimization.",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000",
-    skills: ["A/B Testing", "Conversion Optimization", "User Flows"],
+    title: "Sports Merchandise E-commerce",
+    description: "Data-driven e-commerce strategy with personalized recommendations and engagement campaigns for sports merchandise.",
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1000",
+    skills: ["E-commerce", "Personalization", "Customer Engagement", "Conversion Optimization"],
     category: "e-commerce"
   },
   {
     id: "project-4",
-    title: "Internal Tools Platform",
-    description: "Created a unified platform for internal tools, improving productivity and reducing onboarding time for employees across departments.",
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000",
-    skills: ["Requirements Analysis", "System Integration", "User Interviews"],
-    category: "tools"
+    title: "ML Learning Recommendations",
+    description: "Recommendation engine for learning content based on user behavior, progress, and career goals to enhance engagement.",
+    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1000",
+    skills: ["Machine Learning", "Personalization", "EdTech", "User Retention"],
+    category: "analytics"
   },
   {
     id: "project-5",
-    title: "Content Management System",
-    description: "Redesigned a complex CMS for a media company, focusing on streamlining workflows and improving content creation efficiency.",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1000",
-    skills: ["Workflow Optimization", "Information Architecture", "User Testing"],
-    category: "cms"
+    title: "Learning Marketplace",
+    description: "Platform for industry experts to create, market and sell specialized learning programs to enterprise customers.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000",
+    skills: ["Marketplace Development", "Content Management", "Monetization", "B2B Platform"],
+    category: "featured"
   },
   {
     id: "project-6",
-    title: "Healthcare Patient Portal",
-    description: "Developed a patient portal allowing users to schedule appointments, access medical records, and communicate with healthcare providers.",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000",
-    skills: ["HIPAA Compliance", "Accessibility", "User Research"],
-    category: "healthcare"
+    title: "Digital Assessment Tool",
+    description: "Customizable assessment framework for enterprises to evaluate and develop talent across various competencies.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1000",
+    skills: ["Assessment Design", "Skill Mapping", "Data Analytics", "Enterprise Solutions"],
+    category: "analytics"
   }
 ];
 
@@ -66,32 +66,36 @@ const Projects = () => {
       <div 
         className="mb-12 text-center animate-fade-in"
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-dark-grey to-medium-grey bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">
           Product Projects
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          A curated collection of product initiatives I've led across various industries, 
+        <p className="text-lg text-mono-slate max-w-2xl mx-auto">
+          A selection of product initiatives I've led across various industries,
           demonstrating my approach to solving complex challenges.
         </p>
       </div>
 
       <Tabs defaultValue="all" className="mb-16">
         <div className="flex justify-center mb-8">
-          <TabsList className="bg-light-grey/50">
+          <TabsList className="bg-mono-ghost">
             <TabsTrigger value="all" className="text-sm">All Projects</TabsTrigger>
-            <TabsTrigger value="featured" className="text-sm">
-              <Star className="mr-1 h-4 w-4" />
+            <TabsTrigger value="featured" className="text-sm flex items-center gap-1">
+              <Star className="h-3.5 w-3.5" />
               Featured
             </TabsTrigger>
-            <TabsTrigger value="case-studies" className="text-sm">
-              <BookOpen className="mr-1 h-4 w-4" />
-              With Case Studies
+            <TabsTrigger value="analytics" className="text-sm flex items-center gap-1">
+              <LineChart className="h-3.5 w-3.5" />
+              Analytics
+            </TabsTrigger>
+            <TabsTrigger value="e-commerce" className="text-sm flex items-center gap-1">
+              <ShoppingBag className="h-3.5 w-3.5" />
+              E-commerce
             </TabsTrigger>
           </TabsList>
         </div>
 
         <TabsContent value="all" className="mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projectsData.map((project, index) => (
               <div
                 key={project.id}
@@ -105,7 +109,7 @@ const Projects = () => {
         </TabsContent>
         
         <TabsContent value="featured" className="mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projectsData
               .filter(project => project.category === 'featured')
               .map((project, index) => (
@@ -120,10 +124,26 @@ const Projects = () => {
           </div>
         </TabsContent>
         
-        <TabsContent value="case-studies" className="mt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <TabsContent value="analytics" className="mt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projectsData
-              .filter(project => ['project-1', 'project-3'].includes(project.id))
+              .filter(project => project.category === 'analytics')
+              .map((project, index) => (
+                <div
+                  key={project.id}
+                  className="animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+          </div>
+        </TabsContent>
+        
+        <TabsContent value="e-commerce" className="mt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projectsData
+              .filter(project => project.category === 'e-commerce')
               .map((project, index) => (
                 <div
                   key={project.id}
@@ -138,20 +158,22 @@ const Projects = () => {
       </Tabs>
 
       <div 
-        className="text-center py-12 bg-gradient-to-b from-transparent to-light-grey/30 rounded-xl px-6 animate-fade-in"
-        style={{ animationDelay: '300ms' }}
+        className="text-center py-12 bg-mono-ghost rounded-xl px-6 border border-mono-light animate-fade-in"
       >
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">Interested in my approach?</h2>
-        <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-          These projects showcase my product management philosophy. I'm always open to discussing 
-          new challenges or providing more detailed insights into my work.
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's Discuss Your Project</h2>
+        <p className="text-mono-slate mb-8 max-w-2xl mx-auto">
+          I'm passionate about building products that solve real problems and create measurable impact.
+          If you're looking for a product manager with expertise in data platforms and analytics, let's connect.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <Button size="lg" variant="default">
-            Download Portfolio
+          <Button asChild>
+            <a href="/files/resume.pdf" download>Download Portfolio</a>
           </Button>
-          <Button size="lg" variant="outline" asChild>
-            <a href="mailto:contact@pmportfolio.com">Contact Me</a>
+          <Button variant="outline" asChild className="group">
+            <a href="mailto:akshatsid36@gmail.com">
+              Contact Me
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </Button>
         </div>
       </div>
