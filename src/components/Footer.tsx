@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 
@@ -45,6 +46,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Home</Link></li>
               <li><Link to="/experience" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Experience</Link></li>
+              <li><Link to="/freelance" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Freelance</Link></li>
               <li><Link to="/case-studies" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Case Studies</Link></li>
               <li><Link to="/projects" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Projects</Link></li>
             </ul>

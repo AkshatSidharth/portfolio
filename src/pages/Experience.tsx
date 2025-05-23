@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import ExperienceCard from '../components/ExperienceCard';
 import { Button } from "@/components/ui/button";
-import { FileDown } from 'lucide-react';
+import { FileDown, Briefcase, Award, LineChart } from 'lucide-react';
 
 const experiencesData = [
   {
@@ -99,26 +99,39 @@ const Experience = () => {
   return (
     <div className="container-narrow mx-auto px-4 py-12">
       <div className="mb-12 text-center animate-fade-in">
-        <h1 className="text-4xl font-bold mb-4">Work Experience</h1>
+        <h1 className="text-4xl font-bold mb-4 text-gradient">Work Experience</h1>
         <p className="text-lg text-mono-slate max-w-2xl mx-auto">
           3+ years of product management experience across customer data platforms, analytics solutions, and digital transformation.
         </p>
       </div>
 
       <div className="mb-16">
-        <h2 className="text-2xl font-semibold mb-8">Professional Journey</h2>
+        <div className="flex items-center gap-2 mb-8">
+          <Briefcase className="w-5 h-5 text-accent-teal" />
+          <h2 className="text-2xl font-semibold">Professional Journey</h2>
+        </div>
         
-        <div className="space-y-12">
+        <div className="space-y-12 relative">
+          <div className="absolute left-[24px] top-8 bottom-0 w-0.5 bg-mono-light/70"></div>
           {experiencesData.map((exp, index) => (
-            <ExperienceCard key={index} {...exp} />
+            <div 
+              key={index} 
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <ExperienceCard {...exp} />
+            </div>
           ))}
         </div>
       </div>
 
       <div className="mb-16 animate-fade-in">
-        <h2 className="text-2xl font-semibold mb-8">Skills & Expertise</h2>
+        <div className="flex items-center gap-2 mb-8">
+          <Award className="w-5 h-5 text-accent-teal" />
+          <h2 className="text-2xl font-semibold">Skills & Expertise</h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm">
+          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm hover:shadow-md transition-shadow">
             <h3 className="text-xl font-medium mb-4 text-mono-black">Product Management</h3>
             <ul className="space-y-2">
               {skillsData.product.map((skill, index) => (
@@ -130,7 +143,7 @@ const Experience = () => {
             </ul>
           </div>
           
-          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm">
+          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm hover:shadow-md transition-shadow">
             <h3 className="text-xl font-medium mb-4 text-mono-black">Technical Skills</h3>
             <ul className="space-y-2">
               {skillsData.technical.map((skill, index) => (
@@ -142,7 +155,7 @@ const Experience = () => {
             </ul>
           </div>
           
-          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm">
+          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm hover:shadow-md transition-shadow">
             <h3 className="text-xl font-medium mb-4 text-mono-black">Research & Strategy</h3>
             <ul className="space-y-2">
               {skillsData.research.map((skill, index) => (
@@ -154,13 +167,13 @@ const Experience = () => {
             </ul>
           </div>
           
-          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm">
+          <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm hover:shadow-md transition-shadow">
             <h3 className="text-xl font-medium mb-4 text-mono-black">Tools & Software</h3>
             <div className="flex flex-wrap gap-2">
               {skillsData.tools.map((tool, index) => (
                 <span 
                   key={index} 
-                  className="px-3 py-1.5 bg-mono-ghost text-mono-slate text-sm rounded-md"
+                  className="px-3 py-1.5 bg-mono-ghost text-mono-slate text-sm rounded-md hover:bg-mono-light transition-colors"
                 >
                   {tool}
                 </span>
@@ -170,17 +183,24 @@ const Experience = () => {
         </div>
       </div>
 
-      <div className="text-center py-8 bg-mono-ghost rounded-lg border border-mono-light">
-        <h2 className="text-2xl font-semibold mb-6">Want the complete details?</h2>
-        <p className="text-mono-slate mb-6 max-w-lg mx-auto">
-          Download my resume for a comprehensive overview of my professional experience, skills, and qualifications.
-        </p>
-        <Button size="lg" asChild>
-          <a href="/files/resume.pdf" download>
-            <FileDown className="mr-2 h-4 w-4" />
-            Download Resume
-          </a>
-        </Button>
+      <div className="relative py-10 px-8 bg-gradient-to-r from-accent-teal/10 to-mono-ghost rounded-lg border border-mono-light overflow-hidden">
+        <div className="relative z-10">
+          <div className="flex items-center gap-2 mb-4">
+            <LineChart className="w-5 h-5 text-accent-teal" />
+            <h2 className="text-2xl font-semibold">Want the complete details?</h2>
+          </div>
+          <p className="text-mono-slate mb-6 max-w-lg">
+            Download my resume for a comprehensive overview of my professional experience, skills, and qualifications.
+          </p>
+          <Button size="lg" className="bg-accent-teal hover:bg-accent-teal/90" asChild>
+            <a href="/files/resume.pdf" download>
+              <FileDown className="mr-2 h-4 w-4" />
+              Download Resume
+            </a>
+          </Button>
+        </div>
+        <div className="absolute -right-10 -top-10 w-56 h-56 rounded-full bg-accent-teal/5 blur-3xl"></div>
+        <div className="absolute -left-10 -bottom-10 w-56 h-56 rounded-full bg-accent-teal/5 blur-3xl"></div>
       </div>
     </div>
   );
