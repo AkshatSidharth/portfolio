@@ -1,9 +1,8 @@
-
 import { useEffect } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Briefcase, Star, LineChart, ShoppingBag } from "lucide-react";
+import { Briefcase, Star, LineChart, ShoppingBag, ArrowRight } from "lucide-react";
 
 const projectsData = [
   {
