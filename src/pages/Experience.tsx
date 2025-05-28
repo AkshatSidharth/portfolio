@@ -9,78 +9,64 @@ const experiencesData = [
     title: 'Associate Technical Product Manager',
     company: 'Proem Sports',
     location: 'Bengaluru, India',
-    duration: 'May 2024 - Present',
-    description: 'Leading technical product initiatives focused on data platforms and analytics for sports technology. Spearheading the development of customer engagement solutions and predictive analytics systems that drive athlete performance optimization and business growth. Working closely with engineering teams to build scalable data infrastructure and user-centric mobile experiences.',
-    highlights: [
-      'Developed a comprehensive Customer Data & Engagement Platform that increased user stickiness by 30% and improved event data processing efficiency by 16% through advanced analytics and personalization engines',
-      'Engineered predictive analytics models for sports performance optimization, increasing athlete efficiency by 15% and supporting strategic market expansion into 3 new geographic regions',
-      'Optimized e-commerce strategy for sports merchandise with data-driven personalization algorithms, boosting sales conversion rates by 28% and average order value by 22%',
-      'Redesigned mobile app UI/UX with comprehensive user research and data-driven approach, resulting in 30% increase in daily recurring users and 45% improvement in session duration within three months',
-      'Led cross-functional teams of 8+ members including engineers, designers, and data scientists to deliver product features ahead of schedule'
+    duration: 'May 2024 – Present',
+    icon: '🟩',
+    briefSummary: 'At Proem Sports, I lead the development of next-generation data-driven solutions for the sports and entertainment industry. My role centers on enhancing fan experiences, optimizing athlete performance, and supporting global sports brands in their digital transformation journey. I\'ve delivered impactful products across customer data platforms, predictive analytics, and e-commerce enablement, working cross-functionally with engineering, marketing, design, and data teams.',
+    achievements: [
+      'Customer Data & Engagement Platform: Conceptualized and launched an omnichannel engagement platform that unified fragmented fan data into a single view. Enabled marketing teams to build automated, targeted campaigns—resulting in a 30% increase in fan engagement and 16% faster event processing, directly enhancing marketing efficiency.',
+      'Predictive Performance Analytics for Athletes: Spearheaded the development of an ML-powered performance module that analyzed biometric and gameplay data. Provided coaches with predictive insights and actionable metrics—leading to a 15% boost in athlete performance and expansion into two new international sports leagues.',
+      'E-commerce Optimization for Sports Merchandise: Leveraged user segmentation and behavioral analytics to design a personalization engine for a client\'s e-commerce store. Campaign optimization and personalized targeting drove a 28% increase in merchandise sales within a quarter.',
+      'Mobile App UI Revamp: Led end-to-end redesign of the mobile app for a client business. Using data-informed design decisions and usability testing, the new experience improved navigation, engagement, and stickiness—resulting in a 30% increase in daily recurring users within 90 days.'
     ],
-    technologies: ['Customer Data Platforms', 'Machine Learning & AI', 'Advanced Data Analytics', 'Mobile UX/UI Design', 'E-commerce Optimization', 'Predictive Modeling', 'Cross-functional Leadership'],
-    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=200&h=200&fit=crop&crop=center'
+    toolsUsed: {
+      'Product Management': ['JIRA', 'Productboard', 'Trello'],
+      'Design & Prototyping': ['Figma', 'Lucidchart', 'Miro'],
+      'Analytics & CDP': ['Mixpanel', 'Amplitude', 'Google Analytics', 'Looker'],
+      'User Research': ['Hotjar', 'Maze', 'Intercom', 'SurveyMonkey'],
+      'Visualization & Engagement': ['Segment', 'Whimsical']
+    }
   },
   {
     title: 'Associate Product Manager',
-    company: 'AntWalk (YC 22)',
+    company: 'AntWalk (YC W22)',
     location: 'Bengaluru, India',
-    duration: 'June 2023 - May 2024',
-    description: 'Led end-to-end product development for learning platforms and enterprise analytics solutions serving Fortune 500 clients in BFSI sector. Orchestrated the design and implementation of ML-powered recommendation systems while establishing new revenue streams through marketplace development. Managed product strategy for both B2B enterprise solutions and B2C consumer platforms.',
-    highlights: [
-      'Designed and launched comprehensive analytical dashboards for BFSI clients that improved compliance tracking accuracy by 35% and risk management efficiency, resulting in 20% workforce performance improvement and $2M+ cost savings',
-      'Implemented sophisticated ML-powered recommendation engine using collaborative filtering and content-based algorithms, increasing course completion rates by 19% and user retention by 14% across 50K+ active learners',
-      'Successfully launched B2C hiring platform combining intelligent job matching with personalized skill-building resources, driving 12% user acquisition growth and achieving 8% higher satisfaction scores than competitors',
-      'Established learning marketplace connecting 200+ industry experts with learners, enabling custom program sales and expanding revenue streams by 25% within 6 months',
-      'Integrated comprehensive gamification features including achievement systems, leaderboards, and progress tracking that increased daily learner engagement by 22% and reduced course dropout rates by 18%',
-      'Conducted extensive user research with 1000+ participants to inform product roadmap and feature prioritization'
+    duration: 'June 2023 – May 2024',
+    icon: '🟦',
+    briefSummary: 'At AntWalk, a Y Combinator-backed edtech and talent platform, I led product initiatives spanning personalized learning, B2C platform expansion, and engagement optimization. My work involved end-to-end product ownership—from defining user journeys to driving GTM, shaping data strategies, and integrating AI-based solutions to improve learning outcomes and user growth.',
+    achievements: [
+      'ML-Powered Learning Recommendations: Designed and deployed an AI-driven recommendation engine that personalized course suggestions based on user behavior and learning goals. This dynamic content delivery led to a 19% increase in course completion rates and a 14% boost in user retention.',
+      'B2C Hiring Platform Launch: Conceptualized and led the go-to-market for a new B2C product combining job discovery with personalized upskilling. From MVP wireframes to stakeholder alignment and beta testing, the platform launched successfully and delivered a 12% user acquisition boost with an 8% rise in satisfaction scores in the first quarter.',
+      'BFSI Client Dashboards: Built regulatory and performance dashboards for enterprise clients in the BFSI sector, aiding compliance teams and improving workforce efficiency. Resulted in a 20% uplift in workforce performance.',
+      'Learning Marketplace & Gamification: Created a two-sided marketplace for vetted industry educators and embedded gamified learning pathways (leaderboards, streaks, badges). These features led to a 22% increase in daily learner activity and drove monetization through premium program enrollments.'
     ],
-    technologies: ['Advanced Data Analytics', 'ML Recommendation Systems', 'Marketplace Development', 'Gamification Design', 'B2B/B2C Product Strategy', 'User Research', 'Revenue Optimization'],
-    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop&crop=center'
+    toolsUsed: {
+      'Product & Sprint Management': ['Notion', 'JIRA', 'Trello'],
+      'Data & Analytics': ['Amplitude', 'Google Analytics', 'Hotjar', 'Mixpanel'],
+      'UX/UI': ['Figma', 'Maze', 'Miro'],
+      'CX & Feedback': ['Zendesk', 'SurveyMonkey', 'Intercom'],
+      'Gamification & Marketplace Tools': ['Custom internal admin panels', 'Firebase']
+    }
   },
   {
     title: 'Associate Product Manager',
     company: 'Think Talent Services',
     location: 'Gurgaon, India',
-    duration: 'January 2022 - June 2023',
-    description: 'Developed and launched innovative digital assessment and talent management solutions for enterprise clients across multiple industries. Led comprehensive market research initiatives and strategic pricing model development while building AI-powered recruitment tools that transformed traditional hiring processes. Focused on creating scalable SaaS solutions that addressed critical talent acquisition challenges.',
-    highlights: [
-      'Conducted strategic market research across 15+ industry verticals that informed comprehensive product roadmap, contributing to 11% market share growth and 16% higher customer satisfaction scores year-over-year',
-      'Launched highly customizable digital assessment platform with 50+ assessment templates that improved hiring flexibility by 40%, driving 24% higher candidate engagement and 17% better user experience ratings',
-      'Formulated and implemented data-driven SaaS pricing strategy that resolved revenue inconsistencies and optimized pricing models across customer segments, increasing average contract value by 30% and reducing churn by 15%',
-      'Enabled D2C brand optimization for hiring through AI-powered skill gap analysis and candidate matching algorithms, reducing assessment time by 40% and improving hiring accuracy by 10% for 100+ client organizations',
-      'Built comprehensive analytics dashboard providing real-time insights into hiring funnel performance and candidate quality metrics',
-      'Managed product lifecycle from conception to launch for 5+ major features, coordinating with stakeholders across sales, marketing, and engineering teams'
+    duration: 'January 2022 – June 2023',
+    icon: '🟨',
+    briefSummary: 'At Think Talent Services, a talent intelligence SaaS company, I led multiple product innovations focused on enterprise assessments, skill diagnostics, and pricing optimization. I worked closely with sales, marketing, and engineering teams to build scalable B2B solutions and drive strategic growth via customer research and data-backed decisions.',
+    achievements: [
+      'Customizable Digital Assessment Tool: Launched a fully customizable, modular assessment engine that allowed clients to configure tests aligned with their competencies. This innovation improved user engagement by 14% and enhanced usability scores by 13%.',
+      'AI-Powered Skill Gap Analysis: Partnered with the data science team to roll out a machine learning tool that analyzed skill data and mapped gaps against role requirements. Reduced assessment time by 20%, improved accuracy by 10%, and directly helped clients optimize hiring decisions and upskilling roadmaps.',
+      'SaaS Pricing Strategy Overhaul: Led a pricing audit and competitor benchmarking initiative that culminated in a revamped pricing model based on customer size, usage, and ROI. This strategic change resulted in a 30% increase in average contract value and a 5% rise in LTV.',
+      'Strategic Market Research: Conducted primary and secondary research to understand enterprise pain points in talent development. Influenced product positioning and roadmaps—contributing to an 11% gain in market share and 16% increase in CSAT.'
     ],
-    technologies: ['SaaS Pricing Models', 'Digital Assessment Platforms', 'Market Research & Analysis', 'AI-powered Analytics', 'Enterprise Solutions', 'Talent Management Systems', 'Revenue Strategy'],
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=center'
-  }
-];
-
-const metricsData = [
-  {
-    icon: TrendingUp,
-    value: '30%',
-    label: 'Average Performance Improvement',
-    description: 'Across all product initiatives'
-  },
-  {
-    icon: Users,
-    value: '50K+',
-    label: 'Users Impacted',
-    description: 'Through platform improvements'
-  },
-  {
-    icon: Target,
-    value: '15+',
-    label: 'Products Launched',
-    description: 'From concept to market'
-  },
-  {
-    icon: LineChart,
-    value: '$2M+',
-    label: 'Revenue Impact',
-    description: 'Generated through optimizations'
+    toolsUsed: {
+      'Market Research & Analysis': ['Google Sheets', 'SurveyMonkey', 'Miro'],
+      'Design & Prototyping': ['Lucidchart', 'Figma', 'Whimsical'],
+      'Product Analytics': ['Tableau', 'Looker'],
+      'Documentation & PM Tools': ['Notion', 'JIRA'],
+      'Customer Feedback': ['Hotjar', 'Zendesk']
+    }
   }
 ];
 
@@ -139,27 +125,6 @@ const Experience = () => {
           analytics solutions, and digital transformation initiatives. Proven track record of delivering measurable 
           business impact through data-driven product strategies and cross-functional leadership.
         </p>
-      </div>
-
-      {/* Key Metrics Section */}
-      <div className="mb-16 animate-fade-in">
-        <h2 className="text-3xl font-semibold text-center mb-8 text-warm-espresso">Impact at a Glance</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {metricsData.map((metric, index) => (
-            <div 
-              key={index}
-              className="bg-warm-ivory rounded-xl p-6 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300 text-center"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="flex justify-center mb-4">
-                <metric.icon className="w-8 h-8 text-accent-bronze" />
-              </div>
-              <div className="text-3xl font-bold text-warm-espresso mb-2">{metric.value}</div>
-              <div className="text-lg font-medium text-warm-brown mb-1">{metric.label}</div>
-              <div className="text-sm text-warm-chocolate">{metric.description}</div>
-            </div>
-          ))}
-        </div>
       </div>
 
       <div className="mb-16">

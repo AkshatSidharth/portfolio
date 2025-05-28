@@ -1,16 +1,16 @@
 
 import { useState } from 'react';
-import { ChevronDown, ChevronUp, MapPin, Calendar, Building } from 'lucide-react';
+import { ChevronDown, ChevronUp, MapPin, Calendar, Building, Target, Wrench } from 'lucide-react';
 
 type ExperienceCardProps = {
   title: string;
   company: string;
   location?: string;
   duration: string;
-  description: string;
-  highlights: string[];
-  technologies?: string[];
-  image?: string;
+  icon: string;
+  briefSummary: string;
+  achievements: string[];
+  toolsUsed: Record<string, string[]>;
 };
 
 const ExperienceCard = ({
@@ -18,10 +18,10 @@ const ExperienceCard = ({
   company,
   location,
   duration,
-  description,
-  highlights,
-  technologies,
-  image
+  icon,
+  briefSummary,
+  achievements,
+  toolsUsed
 }: ExperienceCardProps) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -34,76 +34,80 @@ const ExperienceCard = ({
       <div className="bg-warm-ivory rounded-xl p-8 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300 hover:border-warm-sand">
         <div className="flex flex-col gap-6">
           <div className="flex items-start gap-4 mb-4">
-            {image && (
-              <img
-                src={image}
-                alt={`${company} logo`}
-                className="w-16 h-16 rounded-xl object-cover border-2 border-warm-beige shadow-md"
-              />
-            )}
+            <div className="text-4xl">{icon}</div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-warm-espresso mb-2">{title}</h3>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-2xl font-bold text-warm-espresso">{company}</span>
+              </div>
+              <h3 className="text-xl font-semibold text-warm-brown mb-3">{title}</h3>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
-                <div className="flex items-center gap-2">
-                  <Building className="w-4 h-4 text-accent-bronze" />
-                  <span className="font-semibold text-warm-brown text-lg">{company}</span>
-                </div>
                 {location && (
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4 text-warm-chocolate" />
-                    <span className="text-warm-chocolate">{location}</span>
+                    <span className="text-warm-chocolate font-medium">{location}</span>
                   </div>
                 )}
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-warm-chocolate" />
-                <span className="text-sm px-4 py-2 bg-warm-cream rounded-lg text-warm-chocolate font-medium border border-warm-sand">{duration}</span>
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-warm-chocolate" />
+                  <span className="text-sm px-4 py-2 bg-warm-cream rounded-lg text-warm-chocolate font-medium border border-warm-sand">{duration}</span>
+                </div>
               </div>
             </div>
           </div>
           
           <div className="space-y-6">
             <div>
-              <p className="text-warm-chocolate leading-relaxed text-lg">{description}</p>
+              <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
+                <span className="w-2 h-2 bg-accent-bronze rounded-full"></span>
+                Brief Summary
+              </h5>
+              <div className="bg-warm-cream p-6 rounded-lg border border-warm-sand">
+                <p className="text-warm-chocolate leading-relaxed">{briefSummary}</p>
+              </div>
             </div>
             
             {expanded && (
               <div className="space-y-8 animate-fade-in">
                 <div>
                   <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
-                    <span className="w-2 h-2 bg-accent-bronze rounded-full"></span>
-                    Key Achievements & Impact
+                    <Target className="w-5 h-5 text-accent-bronze" />
+                    Key Achievements
                   </h5>
                   <div className="bg-warm-cream p-6 rounded-lg border border-warm-sand">
-                    <ul className="space-y-4">
-                      {highlights.map((highlight, index) => (
+                    <ul className="space-y-6">
+                      {achievements.map((achievement, index) => (
                         <li key={index} className="flex items-start gap-3">
-                          <span className="text-accent-bronze mt-2 flex-shrink-0 text-lg">▸</span>
-                          <span className="text-warm-chocolate leading-relaxed font-medium">{highlight}</span>
+                          <span className="text-green-600 mt-1 flex-shrink-0 text-lg">✅</span>
+                          <span className="text-warm-chocolate leading-relaxed">{achievement}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
                 
-                {technologies && technologies.length > 0 && (
-                  <div>
-                    <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
-                      <span className="w-2 h-2 bg-accent-bronze rounded-full"></span>
-                      Technologies & Tools
-                    </h5>
-                    <div className="flex flex-wrap gap-3">
-                      {technologies.map((tech, index) => (
-                        <span 
-                          key={index}
-                          className="px-4 py-2.5 bg-warm-cream text-warm-chocolate font-medium text-sm rounded-lg hover:bg-warm-beige transition-colors border border-warm-sand shadow-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                <div>
+                  <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
+                    <Wrench className="w-5 h-5 text-accent-bronze" />
+                    Tools Used
+                  </h5>
+                  <div className="space-y-4">
+                    {Object.entries(toolsUsed).map(([category, tools], index) => (
+                      <div key={index} className="bg-warm-cream p-4 rounded-lg border border-warm-sand">
+                        <h6 className="font-semibold text-warm-brown mb-3">{category}:</h6>
+                        <div className="flex flex-wrap gap-2">
+                          {tools.map((tool, toolIndex) => (
+                            <span 
+                              key={toolIndex}
+                              className="px-3 py-1.5 bg-warm-beige text-warm-chocolate text-sm font-medium rounded-md hover:bg-warm-sand transition-colors border border-warm-taupe"
+                            >
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                )}
+                </div>
               </div>
             )}
           </div>
