@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { featureFlags } from '../config/featureFlags';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,9 +11,9 @@ const Header = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Experience', path: '/experience' },
-    { name: 'Freelance', path: '/freelance' },
-    { name: 'Case Studies', path: '/case-studies' },
-    { name: 'Projects', path: '/projects' },
+    ...(featureFlags.showFreelance ? [{ name: 'Freelance', path: '/freelance' }] : []),
+    ...(featureFlags.showCaseStudies ? [{ name: 'Case Studies', path: '/case-studies' }] : []),
+    ...(featureFlags.showProjects ? [{ name: 'Projects', path: '/projects' }] : []),
   ];
 
   useEffect(() => {
@@ -33,13 +34,13 @@ const Header = () => {
   return (
     <header 
       className={`sticky top-0 z-50 py-4 transition-all duration-300 backdrop-blur-md ${
-        scrolled ? 'bg-mono-white/90 shadow-sm' : 'bg-transparent'
+        scrolled ? 'bg-pro-white/90 shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="font-heading text-xl font-semibold tracking-tight">
-            Akshat <span className="text-accent-teal">Sidharth</span>
+            Akshat <span className="text-accent-blue">Sidharth</span>
           </Link>
           
           {/* Mobile menu button */}
@@ -48,7 +49,7 @@ const Header = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-mono-black">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-pro-black">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (

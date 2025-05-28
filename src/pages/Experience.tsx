@@ -120,7 +120,7 @@ const Experience = () => {
     <div className="container-narrow mx-auto px-4 py-12">
       <div className="mb-16 text-center animate-fade-in">
         <h1 className="text-5xl font-bold mb-6 text-gradient">Professional Experience</h1>
-        <p className="text-xl text-warm-chocolate max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-pro-gray max-w-3xl mx-auto leading-relaxed">
           3+ years of strategic product management experience driving innovation across customer data platforms, 
           analytics solutions, and digital transformation initiatives. Proven track record of delivering measurable 
           business impact through data-driven product strategies and cross-functional leadership.
@@ -129,12 +129,12 @@ const Experience = () => {
 
       <div className="mb-16">
         <div className="flex items-center gap-3 mb-10">
-          <Briefcase className="w-6 h-6 text-accent-bronze" />
-          <h2 className="text-3xl font-semibold text-warm-espresso">Professional Journey</h2>
+          <Briefcase className="w-6 h-6 text-accent-blue" />
+          <h2 className="text-3xl font-semibold text-pro-charcoal">Professional Journey</h2>
         </div>
         
         <div className="space-y-12 relative">
-          <div className="absolute left-[24px] top-8 bottom-0 w-0.5 bg-warm-sand/70"></div>
+          <div className="absolute left-[24px] top-8 bottom-0 w-0.5 bg-pro-light-silver/70"></div>
           {experiencesData.map((exp, index) => (
             <div 
               key={index} 
@@ -149,65 +149,65 @@ const Experience = () => {
 
       <div className="mb-16 animate-fade-in">
         <div className="flex items-center gap-3 mb-10">
-          <Award className="w-6 h-6 text-accent-bronze" />
-          <h2 className="text-3xl font-semibold text-warm-espresso">Core Competencies & Expertise</h2>
+          <Award className="w-6 h-6 text-accent-blue" />
+          <h2 className="text-3xl font-semibold text-pro-charcoal">Core Competencies & Expertise</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-warm-ivory rounded-xl p-8 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-6 text-warm-espresso flex items-center gap-2">
-              <Target className="w-5 h-5 text-accent-bronze" />
+          <div className="bg-pro-white rounded-xl p-8 border border-pro-light-silver shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-2xl font-semibold mb-6 text-pro-charcoal flex items-center gap-2">
+              <Target className="w-5 h-5 text-accent-blue" />
               Product Management
             </h3>
             <ul className="space-y-3">
               {skillsData.product.map((skill, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="text-accent-bronze mt-1.5 text-lg">•</span>
-                  <span className="text-warm-chocolate font-medium">{skill}</span>
+                  <span className="text-accent-blue mt-1.5 text-lg">•</span>
+                  <span className="text-pro-gray font-medium">{skill}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          <div className="bg-warm-ivory rounded-xl p-8 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-6 text-warm-espresso flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-accent-bronze" />
+          <div className="bg-pro-white rounded-xl p-8 border border-pro-light-silver shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-2xl font-semibold mb-6 text-pro-charcoal flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-accent-blue" />
               Technical Skills
             </h3>
             <ul className="space-y-3">
               {skillsData.technical.map((skill, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="text-accent-bronze mt-1.5 text-lg">•</span>
-                  <span className="text-warm-chocolate font-medium">{skill}</span>
+                  <span className="text-accent-blue mt-1.5 text-lg">•</span>
+                  <span className="text-pro-gray font-medium">{skill}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          <div className="bg-warm-ivory rounded-xl p-8 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-6 text-warm-espresso flex items-center gap-2">
-              <Users className="w-5 h-5 text-accent-bronze" />
+          <div className="bg-pro-white rounded-xl p-8 border border-pro-light-silver shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-2xl font-semibold mb-6 text-pro-charcoal flex items-center gap-2">
+              <Users className="w-5 h-5 text-accent-blue" />
               Research & Strategy
             </h3>
             <ul className="space-y-3">
               {skillsData.research.map((skill, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <span className="text-accent-bronze mt-1.5 text-lg">•</span>
-                  <span className="text-warm-chocolate font-medium">{skill}</span>
+                  <span className="text-accent-blue mt-1.5 text-lg">•</span>
+                  <span className="text-pro-gray font-medium">{skill}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          <div className="bg-warm-ivory rounded-xl p-8 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-semibold mb-6 text-warm-espresso flex items-center gap-2">
-              <LineChart className="w-5 h-5 text-accent-bronze" />
+          <div className="bg-pro-white rounded-xl p-8 border border-pro-light-silver shadow-lg hover:shadow-xl transition-all duration-300">
+            <h3 className="text-2xl font-semibold mb-6 text-pro-charcoal flex items-center gap-2">
+              <LineChart className="w-5 h-5 text-accent-blue" />
               Tools & Software
             </h3>
             <div className="flex flex-wrap gap-3">
               {skillsData.tools.map((tool, index) => (
                 <span 
                   key={index} 
-                  className="px-4 py-2 bg-warm-cream text-warm-chocolate text-sm font-medium rounded-lg hover:bg-warm-beige transition-colors border border-warm-sand"
+                  className="px-4 py-2 bg-pro-off-white text-pro-gray text-sm font-medium rounded-lg hover:bg-pro-light-silver transition-colors border border-pro-light-silver"
                 >
                   {tool}
                 </span>
@@ -217,26 +217,26 @@ const Experience = () => {
         </div>
       </div>
 
-      <div className="relative py-12 px-10 bg-gradient-to-br from-accent-bronze/10 via-warm-ivory to-accent-gold/10 rounded-xl border border-warm-beige overflow-hidden shadow-xl">
+      <div className="relative py-12 px-10 bg-gradient-to-br from-accent-blue/10 via-pro-white to-accent-blue-light/10 rounded-xl border border-pro-light-silver overflow-hidden shadow-xl">
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-6">
-            <FileDown className="w-6 h-6 text-accent-bronze" />
-            <h2 className="text-3xl font-semibold text-warm-espresso">Complete Professional Portfolio</h2>
+            <FileDown className="w-6 h-6 text-accent-blue" />
+            <h2 className="text-3xl font-semibold text-pro-charcoal">Complete Professional Portfolio</h2>
           </div>
-          <p className="text-warm-chocolate mb-8 max-w-2xl text-lg leading-relaxed">
+          <p className="text-pro-gray mb-8 max-w-2xl text-lg leading-relaxed">
             Interested in the complete details of my professional journey? Download my comprehensive resume for an 
             in-depth overview of my experience, technical skills, educational background, and key achievements 
             across all product management roles.
           </p>
-          <Button size="lg" className="bg-accent-bronze hover:bg-accent-copper text-warm-cream font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-            <a href="/files/resume.pdf" download>
+          <Button size="lg" className="bg-accent-blue hover:bg-accent-blue-light text-pro-white font-semibold px-8 py-3 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+            <a href="https://drive.google.com/uc?export=download&id=1u5_FAY3eRnE9MG4WmXVIWyu3dhKtlhx_" target="_blank" rel="noopener noreferrer">
               <FileDown className="mr-3 h-5 w-5" />
               Download Complete Resume
             </a>
           </Button>
         </div>
-        <div className="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-accent-gold/10 blur-3xl"></div>
-        <div className="absolute -left-12 -bottom-12 w-64 h-64 rounded-full bg-accent-bronze/10 blur-3xl"></div>
+        <div className="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-accent-blue/10 blur-3xl"></div>
+        <div className="absolute -left-12 -bottom-12 w-64 h-64 rounded-full bg-accent-blue-light/10 blur-3xl"></div>
       </div>
     </div>
   );

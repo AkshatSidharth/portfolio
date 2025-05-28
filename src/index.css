@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 30 15% 97%;
-    --foreground: 30 25% 8%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
 
-    --card: 30 20% 98%;
-    --card-foreground: 30 25% 8%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 30 20% 98%;
-    --popover-foreground: 30 25% 8%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 30 25% 8%;
-    --primary-foreground: 30 15% 97%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 30 10% 94%;
-    --secondary-foreground: 30 25% 8%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 30 10% 94%;
-    --muted-foreground: 30 15% 45%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 30 10% 92%;
-    --accent-foreground: 30 25% 8%;
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 30 15% 97%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 30 10% 88%;
-    --input: 30 10% 88%;
-    --ring: 30 25% 8%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 10%;
 
     --radius: 0.5rem;
   }
@@ -49,13 +49,13 @@
   }
   
   body {
-    @apply bg-warm-cream text-warm-charcoal font-sans;
-    background: linear-gradient(135deg, #faf8f5 0%, #f7f3f0 100%);
+    @apply bg-pro-off-white text-pro-charcoal font-sans;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-medium tracking-tight;
-    color: #2d261c;
+    color: #2a2a2a;
   }
   
   h1 {
@@ -75,7 +75,7 @@
   }
   
   p {
-    @apply text-base leading-relaxed text-warm-chocolate;
+    @apply text-base leading-relaxed text-pro-gray;
   }
   
   .section {
@@ -89,24 +89,24 @@
   }
   
   .card {
-    @apply bg-warm-ivory rounded-xl border border-warm-beige shadow-lg p-6 transition-all hover:shadow-xl hover:border-warm-sand;
-    background: linear-gradient(145deg, #faf8f5, #f7f3f0);
+    @apply bg-pro-white rounded-xl border border-pro-light-silver shadow-lg p-6 transition-all hover:shadow-xl hover:border-pro-silver;
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
   }
   
   .btn-primary {
-    @apply bg-warm-espresso text-warm-cream px-6 py-3 rounded-lg font-medium hover:bg-warm-charcoal transition-all duration-300 shadow-md hover:shadow-lg;
+    @apply bg-pro-charcoal text-pro-white px-6 py-3 rounded-lg font-medium hover:bg-pro-black transition-all duration-300 shadow-md hover:shadow-lg;
   }
   
   .btn-ghost {
-    @apply bg-transparent border border-warm-sand text-warm-espresso px-6 py-3 rounded-lg font-medium hover:bg-warm-ivory hover:border-warm-taupe transition-all duration-300;
+    @apply bg-transparent border border-pro-light-silver text-pro-charcoal px-6 py-3 rounded-lg font-medium hover:bg-pro-off-white hover:border-pro-silver transition-all duration-300;
   }
   
   .nav-link {
-    @apply relative text-warm-brown hover:text-warm-espresso transition-colors duration-200 after:absolute after:w-0 after:h-0.5 after:bg-accent-bronze after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative text-pro-gray hover:text-pro-charcoal transition-colors duration-200 after:absolute after:w-0 after:h-0.5 after:bg-accent-blue after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full;
   }
   
   .nav-link.active {
-    @apply text-warm-espresso after:w-full;
+    @apply text-pro-charcoal after:w-full;
   }
   
   .animated-underline {
@@ -114,7 +114,7 @@
   }
   
   .animated-underline::after {
-    @apply content-[''] absolute bottom-0 left-0 w-0 h-[2px] bg-accent-bronze transition-all duration-300 ease-in-out;
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-[2px] bg-accent-blue transition-all duration-300 ease-in-out;
   }
   
   .animated-underline:hover::after {
@@ -122,14 +122,14 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-warm-espresso via-warm-brown to-accent-bronze bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-pro-charcoal via-pro-dark-gray to-accent-blue bg-clip-text text-transparent;
   }
   
-  .warm-gradient {
-    background: linear-gradient(135deg, #faf8f5 0%, #f7f3f0 50%, #e8ddd4 100%);
+  .pro-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #e5e5e5 100%);
   }
   
   .accent-gradient {
-    background: linear-gradient(135deg, #d4af37 0%, #cd7f32 50%, #b87333 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #1d4ed8 100%);
   }
 }

@@ -27,29 +27,29 @@ const ExperienceCard = ({
 
   return (
     <div className="relative pl-16">
-      <div className="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-accent-bronze/20 border-2 border-accent-bronze/40 shadow-lg">
-        <div className="w-4 h-4 rounded-full bg-accent-bronze"></div>
+      <div className="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-accent-blue/20 border-2 border-accent-blue/40 shadow-lg">
+        <div className="w-4 h-4 rounded-full bg-accent-blue"></div>
       </div>
       
-      <div className="bg-warm-ivory rounded-xl p-8 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300 hover:border-warm-sand">
+      <div className="bg-pro-white rounded-xl p-8 border border-pro-light-silver shadow-lg hover:shadow-xl transition-all duration-300 hover:border-pro-silver">
         <div className="flex flex-col gap-6">
           <div className="flex items-start gap-4 mb-4">
             <div className="text-4xl">{icon}</div>
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-2xl font-bold text-warm-espresso">{company}</span>
+                <span className="text-2xl font-bold text-pro-charcoal">{company}</span>
               </div>
-              <h3 className="text-xl font-semibold text-warm-brown mb-3">{title}</h3>
+              <h3 className="text-xl font-semibold text-pro-dark-gray mb-3">{title}</h3>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
                 {location && (
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-warm-chocolate" />
-                    <span className="text-warm-chocolate font-medium">{location}</span>
+                    <MapPin className="w-4 h-4 text-pro-gray" />
+                    <span className="text-pro-gray font-medium">{location}</span>
                   </div>
                 )}
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-warm-chocolate" />
-                  <span className="text-sm px-4 py-2 bg-warm-cream rounded-lg text-warm-chocolate font-medium border border-warm-sand">{duration}</span>
+                  <Calendar className="w-4 h-4 text-pro-gray" />
+                  <span className="text-sm px-4 py-2 bg-pro-off-white rounded-lg text-pro-gray font-medium border border-pro-light-silver">{duration}</span>
                 </div>
               </div>
             </div>
@@ -57,28 +57,28 @@ const ExperienceCard = ({
           
           <div className="space-y-6">
             <div>
-              <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
-                <span className="w-2 h-2 bg-accent-bronze rounded-full"></span>
+              <h5 className="font-semibold text-lg mb-4 text-pro-charcoal flex items-center gap-2">
+                <span className="w-2 h-2 bg-accent-blue rounded-full"></span>
                 Brief Summary
               </h5>
-              <div className="bg-warm-cream p-6 rounded-lg border border-warm-sand">
-                <p className="text-warm-chocolate leading-relaxed">{briefSummary}</p>
+              <div className="bg-pro-off-white p-6 rounded-lg border border-pro-light-silver">
+                <p className="text-pro-gray leading-relaxed">{briefSummary}</p>
               </div>
             </div>
             
             {expanded && (
               <div className="space-y-8 animate-fade-in">
                 <div>
-                  <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
-                    <Target className="w-5 h-5 text-accent-bronze" />
+                  <h5 className="font-semibold text-lg mb-4 text-pro-charcoal flex items-center gap-2">
+                    <Target className="w-5 h-5 text-accent-blue" />
                     Key Achievements
                   </h5>
-                  <div className="bg-warm-cream p-6 rounded-lg border border-warm-sand">
+                  <div className="bg-pro-off-white p-6 rounded-lg border border-pro-light-silver">
                     <ul className="space-y-6">
                       {achievements.map((achievement, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <span className="text-green-600 mt-1 flex-shrink-0 text-lg">✅</span>
-                          <span className="text-warm-chocolate leading-relaxed">{achievement}</span>
+                          <span className="text-pro-gray leading-relaxed">{achievement}</span>
                         </li>
                       ))}
                     </ul>
@@ -86,19 +86,19 @@ const ExperienceCard = ({
                 </div>
                 
                 <div>
-                  <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
-                    <Wrench className="w-5 h-5 text-accent-bronze" />
+                  <h5 className="font-semibold text-lg mb-4 text-pro-charcoal flex items-center gap-2">
+                    <Wrench className="w-5 h-5 text-accent-blue" />
                     Tools Used
                   </h5>
                   <div className="space-y-4">
                     {Object.entries(toolsUsed).map(([category, tools], index) => (
-                      <div key={index} className="bg-warm-cream p-4 rounded-lg border border-warm-sand">
-                        <h6 className="font-semibold text-warm-brown mb-3">{category}:</h6>
+                      <div key={index} className="bg-pro-off-white p-4 rounded-lg border border-pro-light-silver">
+                        <h6 className="font-semibold text-pro-dark-gray mb-3">{category}:</h6>
                         <div className="flex flex-wrap gap-2">
                           {tools.map((tool, toolIndex) => (
                             <span 
                               key={toolIndex}
-                              className="px-3 py-1.5 bg-warm-beige text-warm-chocolate text-sm font-medium rounded-md hover:bg-warm-sand transition-colors border border-warm-taupe"
+                              className="px-3 py-1.5 bg-pro-white text-pro-gray text-sm font-medium rounded-md hover:bg-pro-light-silver transition-colors border border-pro-silver"
                             >
                               {tool}
                             </span>
@@ -114,7 +114,7 @@ const ExperienceCard = ({
           
           <button
             onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-2 text-accent-bronze hover:text-accent-copper transition-colors mt-4 font-semibold text-lg group"
+            className="flex items-center gap-2 text-accent-blue hover:text-accent-blue-light transition-colors mt-4 font-semibold text-lg group"
           >
             {expanded ? (
               <>
