@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, MapPin, Calendar, Building } from 'lucide-react';
 
 type ExperienceCardProps = {
   title: string;
@@ -26,59 +26,77 @@ const ExperienceCard = ({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="relative pl-12">
-      <div className="absolute left-0 top-0 flex items-center justify-center w-8 h-8 rounded-full bg-accent-teal/10 border border-accent-teal/20">
-        <div className="w-3 h-3 rounded-full bg-accent-teal"></div>
+    <div className="relative pl-16">
+      <div className="absolute left-0 top-0 flex items-center justify-center w-12 h-12 rounded-full bg-accent-bronze/20 border-2 border-accent-bronze/40 shadow-lg">
+        <div className="w-4 h-4 rounded-full bg-accent-bronze"></div>
       </div>
       
-      <div className="bg-mono-white rounded-lg p-6 border border-mono-light shadow-sm hover:shadow-md transition-all">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3 mb-2">
+      <div className="bg-warm-ivory rounded-xl p-8 border border-warm-beige shadow-lg hover:shadow-xl transition-all duration-300 hover:border-warm-sand">
+        <div className="flex flex-col gap-6">
+          <div className="flex items-start gap-4 mb-4">
             {image && (
               <img
                 src={image}
                 alt={`${company} logo`}
-                className="w-10 h-10 rounded-full object-cover border border-mono-light"
+                className="w-16 h-16 rounded-xl object-cover border-2 border-warm-beige shadow-md"
               />
             )}
             <div className="flex-1">
-              <h3 className="text-xl font-medium">{title}</h3>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                <span className="font-medium text-mono-slate">{company}</span>
+              <h3 className="text-2xl font-semibold text-warm-espresso mb-2">{title}</h3>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
+                <div className="flex items-center gap-2">
+                  <Building className="w-4 h-4 text-accent-bronze" />
+                  <span className="font-semibold text-warm-brown text-lg">{company}</span>
+                </div>
                 {location && (
-                  <span className="hidden sm:inline text-mono-gray">•</span>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-warm-chocolate" />
+                    <span className="text-warm-chocolate">{location}</span>
+                  </div>
                 )}
-                {location && <span className="text-sm text-mono-gray">{location}</span>}
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-warm-chocolate" />
+                <span className="text-sm px-4 py-2 bg-warm-cream rounded-lg text-warm-chocolate font-medium border border-warm-sand">{duration}</span>
               </div>
             </div>
-            <span className="text-sm px-3 py-1 bg-mono-ghost rounded-full text-mono-gray whitespace-nowrap">{duration}</span>
           </div>
           
-          <div className={expanded ? '' : 'line-clamp-2'}>
-            <p className="text-sm text-mono-slate">{description}</p>
+          <div className="space-y-6">
+            <div>
+              <p className="text-warm-chocolate leading-relaxed text-lg">{description}</p>
+            </div>
             
             {expanded && (
-              <div className="mt-6 space-y-6 animate-fade-in">
+              <div className="space-y-8 animate-fade-in">
                 <div>
-                  <h5 className="font-medium text-sm mb-3 text-mono-black">Key Achievements</h5>
-                  <ul className="space-y-3 bg-mono-ghost p-4 rounded-lg">
-                    {highlights.map((highlight, index) => (
-                      <li key={index} className="text-sm flex items-start gap-2">
-                        <span className="text-accent-teal mt-1 flex-shrink-0">•</span>
-                        <span className="text-mono-slate">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent-bronze rounded-full"></span>
+                    Key Achievements & Impact
+                  </h5>
+                  <div className="bg-warm-cream p-6 rounded-lg border border-warm-sand">
+                    <ul className="space-y-4">
+                      {highlights.map((highlight, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <span className="text-accent-bronze mt-2 flex-shrink-0 text-lg">▸</span>
+                          <span className="text-warm-chocolate leading-relaxed font-medium">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
                 
                 {technologies && technologies.length > 0 && (
                   <div>
-                    <h5 className="font-medium text-sm mb-3 text-mono-black">Tools & Technologies</h5>
-                    <div className="flex flex-wrap gap-2">
+                    <h5 className="font-semibold text-lg mb-4 text-warm-espresso flex items-center gap-2">
+                      <span className="w-2 h-2 bg-accent-bronze rounded-full"></span>
+                      Technologies & Tools
+                    </h5>
+                    <div className="flex flex-wrap gap-3">
                       {technologies.map((tech, index) => (
                         <span 
                           key={index}
-                          className="px-3 py-1.5 bg-mono-ghost text-mono-slate text-xs rounded-md hover:bg-mono-light transition-colors"
+                          className="px-4 py-2.5 bg-warm-cream text-warm-chocolate font-medium text-sm rounded-lg hover:bg-warm-beige transition-colors border border-warm-sand shadow-sm"
                         >
                           {tech}
                         </span>
@@ -92,17 +110,17 @@ const ExperienceCard = ({
           
           <button
             onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-1 text-sm font-medium text-accent-teal hover:text-accent-teal/80 transition-colors mt-2"
+            className="flex items-center gap-2 text-accent-bronze hover:text-accent-copper transition-colors mt-4 font-semibold text-lg group"
           >
             {expanded ? (
               <>
-                <span>Show Less</span>
-                <ChevronUp size={16} />
+                <span>Show Less Details</span>
+                <ChevronUp size={20} className="group-hover:transform group-hover:-translate-y-1 transition-transform" />
               </>
             ) : (
               <>
-                <span>Show More</span>
-                <ChevronDown size={16} />
+                <span>View Full Details</span>
+                <ChevronDown size={20} className="group-hover:transform group-hover:translate-y-1 transition-transform" />
               </>
             )}
           </button>
