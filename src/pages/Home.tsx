@@ -10,113 +10,177 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-6 py-20">
-        {/* Hero Section */}
-        <div className="mb-24">
-          <div className="mb-8">
-            <h1 className="text-6xl font-light text-gray-900 mb-8 tracking-tight leading-tight">
-              Akshat Sidharth
-            </h1>
-            <h2 className="text-2xl font-light text-gray-600 mb-12 tracking-wide">
-              Technical Product Manager
-            </h2>
-          </div>
-          
-          <div className="max-w-3xl">
-            <p className="text-xl text-gray-600 font-light leading-relaxed mb-12">
-              I am a Technical Product Manager with over three years of experience leading the development of digital products that deliver real-world impact. My expertise spans across software as a service platforms, educational technology, and sports technology, where I focus on solving complex problems with clarity, structure, and creativity.
-            </p>
-            
-            <p className="text-xl text-gray-600 font-light leading-relaxed mb-12">
-              Throughout my journey, I have successfully taken multiple products from concept to launch, combining a deep understanding of user behavior with technical and analytical rigor. My work includes building predictive analytics platforms that improve athlete performance, designing personalized learning engines that increase user engagement, and optimizing digital marketplaces through data-driven insights.
-            </p>
-            
-            <p className="text-xl text-gray-600 font-light leading-relaxed mb-16">
-              I believe in the power of cross-functional collaboration, continuous learning, and building with empathy. My approach centers on aligning business goals with user needs to create products that are not only functional but also meaningful.
-            </p>
-          </div>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-8">
+              <div className="space-y-8 animate-fade-in">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-2 h-2 bg-gray-900 rounded-full animate-pulse"></div>
+                    <span className="text-sm font-mono text-gray-600 tracking-wider">AVAILABLE FOR OPPORTUNITIES</span>
+                  </div>
+                  
+                  <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-none">
+                    Akshat
+                    <br />
+                    <span className="font-light italic">Sidharth</span>
+                  </h1>
+                  
+                  <div className="flex items-center gap-4 mt-8">
+                    <div className="h-px bg-gray-300 w-16"></div>
+                    <p className="text-xl md:text-2xl font-light text-gray-600 tracking-wide">
+                      Technical Product Manager
+                    </p>
+                  </div>
+                </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="bg-gray-900 hover:bg-gray-800 text-white font-normal px-8 py-4 rounded-md text-lg" 
-              asChild
-            >
-              <a href="https://drive.google.com/uc?export=download&id=1u5_FAY3eRnE9MG4WmXVIWyu3dhKtlhx_" download>
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-gray-300 text-gray-700 hover:bg-gray-50 font-normal px-8 py-4 rounded-md text-lg" 
-              asChild
-            >
-              <a href="mailto:akshatsid36@gmail.com">
-                <Mail className="mr-2 h-5 w-5" />
-                Get in Touch
-              </a>
-            </Button>
-          </div>
-        </div>
+                <div className="max-w-2xl space-y-6 text-lg text-gray-600 leading-relaxed">
+                  <p className="font-light">
+                    I am a Technical Product Manager with over <span className="font-medium text-gray-900">three years of experience</span> leading the development of digital products that deliver real-world impact.
+                  </p>
+                  
+                  <p className="font-light">
+                    My expertise spans across <span className="font-medium text-gray-900">software as a service platforms, educational technology, and sports technology</span>, where I focus on solving complex problems with clarity, structure, and creativity.
+                  </p>
+                </div>
 
-        {/* Experience Preview */}
-        <div className="mb-24">
-          <h2 className="text-4xl font-light text-gray-900 mb-12 tracking-tight">
-            Recent Experience
-          </h2>
-          
-          <div className="space-y-12">
-            <div className="border-l-2 border-gray-200 pl-8">
-              <div className="mb-4">
-                <h3 className="text-2xl font-medium text-gray-900 mb-2">Proem Sports</h3>
-                <p className="text-lg text-gray-600 font-light mb-2">Associate Technical Product Manager</p>
-                <p className="text-sm text-gray-500">May 2024 – Present • Bengaluru, India</p>
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-8">
+                  <Button 
+                    size="lg" 
+                    className="bg-gray-900 hover:bg-gray-800 text-white font-medium px-8 py-4 rounded-none hover:scale-105 transition-all duration-300 group" 
+                    asChild
+                  >
+                    <a href="https://drive.google.com/uc?export=download&id=1u5_FAY3eRnE9MG4WmXVIWyu3dhKtlhx_" download>
+                      <Download className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
+                      Download Resume
+                    </a>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-medium px-8 py-4 rounded-none hover:scale-105 transition-all duration-300" 
+                    asChild
+                  >
+                    <a href="mailto:akshatsid36@gmail.com">
+                      <Mail className="mr-2 h-5 w-5" />
+                      Get in Touch
+                    </a>
+                  </Button>
+                </div>
               </div>
-              <p className="text-gray-600 font-light leading-relaxed mb-6">
-                Leading the development of next-generation data-driven solutions for the sports and entertainment industry, focusing on enhancing fan experiences and optimizing athlete performance.
-              </p>
-              <Button variant="ghost" className="text-gray-600 hover:text-gray-900 p-0" asChild>
-                <a href="/experience">
-                  View Full Experience
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+            </div>
+
+            {/* Side Stats */}
+            <div className="lg:col-span-4">
+              <div className="space-y-8 lg:pl-8">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="text-3xl font-bold text-gray-900 mb-2">3+</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider">YEARS</div>
+                  </div>
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="text-3xl font-bold text-gray-900 mb-2">10+</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider">PRODUCTS</div>
+                  </div>
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="text-3xl font-bold text-gray-900 mb-2">30%</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider">AVG GROWTH</div>
+                  </div>
+                  <div className="text-center group hover:scale-105 transition-transform duration-300">
+                    <div className="text-3xl font-bold text-gray-900 mb-2">5</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider">INDUSTRIES</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Contact Section */}
-        <div className="border-t border-gray-200 pt-16">
-          <h2 className="text-4xl font-light text-gray-900 mb-8 tracking-tight">
-            Let's Connect
-          </h2>
-          <p className="text-xl text-gray-600 font-light leading-relaxed mb-8 max-w-2xl">
-            I'm always interested in discussing product strategy, digital transformation, and opportunities to create meaningful impact through technology.
-          </p>
+      {/* Experience Preview */}
+      <section className="py-20 px-6 md:px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="h-px bg-gray-300 flex-1"></div>
+            <h2 className="text-sm font-mono text-gray-600 tracking-wider">RECENT WORK</h2>
+            <div className="h-px bg-gray-300 flex-1"></div>
+          </div>
           
-          <div className="flex space-x-6">
-            <a 
-              href="mailto:akshatsid36@gmail.com" 
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-              aria-label="Email"
-            >
-              <Mail size={24} />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/akshat-sidharth/" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={24} />
-            </a>
+          <div className="bg-white p-8 md:p-12 hover:shadow-lg transition-all duration-500 group">
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-300">
+                  Proem Sports
+                </h3>
+                <p className="text-lg text-gray-600 font-light">Associate Technical Product Manager</p>
+                <p className="text-sm font-mono text-gray-500 mt-2">MAY 2024 – PRESENT</p>
+              </div>
+              <Button 
+                variant="ghost" 
+                className="text-gray-600 hover:text-gray-900 p-0 group-hover:translate-x-2 transition-all duration-300" 
+                asChild
+              >
+                <a href="/experience">
+                  <span className="mr-2">View Details</span>
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+            
+            <p className="text-gray-600 leading-relaxed font-light max-w-4xl">
+              Leading the development of next-generation data-driven solutions for the sports and entertainment industry, 
+              focusing on enhancing fan experiences and optimizing athlete performance through innovative technology platforms.
+            </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-6 md:px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Let's Create Something
+              <br />
+              <span className="font-light italic">Extraordinary</span>
+            </h2>
+            
+            <p className="text-xl text-gray-600 font-light leading-relaxed">
+              I'm always interested in discussing product strategy, digital transformation, 
+              and opportunities to create meaningful impact through technology.
+            </p>
+            
+            <div className="flex justify-center space-x-8 pt-8">
+              <a 
+                href="mailto:akshatsid36@gmail.com" 
+                className="group flex flex-col items-center space-y-2 hover:scale-110 transition-all duration-300"
+                aria-label="Email"
+              >
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-900 transition-colors duration-300">
+                  <Mail className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors duration-300" />
+                </div>
+                <span className="text-sm font-mono text-gray-600">EMAIL</span>
+              </a>
+              
+              <a 
+                href="https://www.linkedin.com/in/akshat-sidharth/" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="group flex flex-col items-center space-y-2 hover:scale-110 transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-gray-900 transition-colors duration-300">
+                  <Linkedin className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors duration-300" />
+                </div>
+                <span className="text-sm font-mono text-gray-600">LINKEDIN</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

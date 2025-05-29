@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { featureFlags } from '../config/featureFlags';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,9 +10,7 @@ const Header = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Experience', path: '/experience' },
-    ...(featureFlags.showFreelance ? [{ name: 'Freelance', path: '/freelance' }] : []),
-    ...(featureFlags.showCaseStudies ? [{ name: 'Case Studies', path: '/case-studies' }] : []),
-    ...(featureFlags.showProjects ? [{ name: 'Projects', path: '/projects' }] : []),
+    { name: 'Freelance', path: '/freelance' },
   ];
 
   useEffect(() => {
@@ -33,59 +30,67 @@ const Header = () => {
 
   return (
     <header 
-      className={`sticky top-0 z-50 py-4 transition-all duration-300 backdrop-blur-md ${
-        scrolled ? 'bg-pro-white/90 shadow-sm' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 py-6 transition-all duration-500 backdrop-blur-lg ${
+        scrolled ? 'bg-white/80 shadow-sm border-b border-gray-100' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-6 md:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="font-heading text-xl font-semibold tracking-tight">
-            Akshat <span className="text-accent-blue">Sidharth</span>
+          <Link 
+            to="/" 
+            className="font-mono text-xl font-bold tracking-tighter hover:scale-105 transition-transform duration-300"
+          >
+            AS<span className="text-gray-500">.</span>
           </Link>
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden"
+            className="md:hidden group"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-pro-black">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            <div className="w-6 h-5 relative flex flex-col justify-between">
+              <span className={`h-0.5 w-full bg-gray-900 transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`h-0.5 w-full bg-gray-900 transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`h-0.5 w-full bg-gray-900 transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </div>
           </button>
           
           {/* Desktop navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
+                className={`text-sm font-medium tracking-wide relative group transition-all duration-300 ${
+                  isActive(item.path) ? 'text-gray-900' : 'text-gray-600 hover:text-gray-900'
+                }`}
               >
                 {item.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-gray-900 transition-all duration-300 ${
+                  isActive(item.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </Link>
             ))}
             <a 
               href="mailto:akshatsid36@gmail.com" 
-              className="btn-ghost text-sm py-2 px-4"
+              className="px-6 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 hover:scale-105 transition-all duration-300"
             >
-              Contact Me
+              Contact
             </a>
           </nav>
         </div>
 
         {/* Mobile navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-2 flex flex-col space-y-4 animate-fade-in">
+          <nav className="md:hidden mt-8 pb-6 flex flex-col space-y-6 animate-fade-in">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
+                className={`text-lg font-medium ${
+                  isActive(item.path) ? 'text-gray-900' : 'text-gray-600'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -93,10 +98,10 @@ const Header = () => {
             ))}
             <a 
               href="mailto:akshatsid36@gmail.com" 
-              className="btn-ghost text-center text-sm py-2"
+              className="px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-full text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact Me
+              Contact
             </a>
           </nav>
         )}
