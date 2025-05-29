@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { ArrowRight, Download, Mail, Linkedin } from 'lucide-react';
+import { Download, Mail, Linkedin } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
@@ -17,11 +17,6 @@ const Home = () => {
             <div className="lg:col-span-8">
               <div className="space-y-8 animate-fade-in">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-2 h-2 bg-gray-900 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-mono text-gray-600 tracking-wider">AVAILABLE FOR OPPORTUNITIES</span>
-                  </div>
-                  
                   <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 leading-none">
                     Akshat
                     <br />
@@ -38,11 +33,19 @@ const Home = () => {
 
                 <div className="max-w-2xl space-y-6 text-lg text-gray-600 leading-relaxed">
                   <p className="font-light">
-                    I am a Technical Product Manager with over <span className="font-medium text-gray-900">three years of experience</span> leading the development of digital products that deliver real-world impact.
+                    I'm a strategic product leader who transforms complex technical challenges into 
+                    <span className="font-medium text-gray-900"> intuitive digital experiences</span> that drive measurable business growth.
                   </p>
                   
                   <p className="font-light">
-                    My expertise spans across <span className="font-medium text-gray-900">software as a service platforms, educational technology, and sports technology</span>, where I focus on solving complex problems with clarity, structure, and creativity.
+                    With expertise spanning <span className="font-medium text-gray-900">SaaS platforms, EdTech, and sports technology</span>, 
+                    I specialize in bridging the gap between user needs and technical possibilities, 
+                    delivering products that scale from concept to millions of users.
+                  </p>
+                  
+                  <p className="font-light">
+                    My approach combines <span className="font-medium text-gray-900">data-driven insights, user-centric design, and agile methodologies</span> 
+                    to create products that not only meet market demands but anticipate future opportunities.
                   </p>
                 </div>
 
@@ -73,67 +76,33 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Side Stats */}
+            {/* Side Stats with Labels */}
             <div className="lg:col-span-4">
               <div className="space-y-8 lg:pl-8">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-gray-900 mb-2">3+</div>
-                    <div className="text-sm font-mono text-gray-600 tracking-wider">YEARS</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider mb-1">YEARS</div>
+                    <div className="text-xs text-gray-500 leading-tight">Professional Product Management Experience</div>
                   </div>
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-gray-900 mb-2">10+</div>
-                    <div className="text-sm font-mono text-gray-600 tracking-wider">PRODUCTS</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider mb-1">PRODUCTS</div>
+                    <div className="text-xs text-gray-500 leading-tight">Digital Products Launched & Managed</div>
                   </div>
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-gray-900 mb-2">30%</div>
-                    <div className="text-sm font-mono text-gray-600 tracking-wider">AVG GROWTH</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider mb-1">AVG GROWTH</div>
+                    <div className="text-xs text-gray-500 leading-tight">User Engagement & Revenue Improvement</div>
                   </div>
                   <div className="text-center group hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl font-bold text-gray-900 mb-2">5</div>
-                    <div className="text-sm font-mono text-gray-600 tracking-wider">INDUSTRIES</div>
+                    <div className="text-sm font-mono text-gray-600 tracking-wider mb-1">INDUSTRIES</div>
+                    <div className="text-xs text-gray-500 leading-tight">Diverse Sectors Including EdTech & SaaS</div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Preview */}
-      <section className="py-20 px-6 md:px-8 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="h-px bg-gray-300 flex-1"></div>
-            <h2 className="text-sm font-mono text-gray-600 tracking-wider">RECENT WORK</h2>
-            <div className="h-px bg-gray-300 flex-1"></div>
-          </div>
-          
-          <div className="bg-white p-8 md:p-12 hover:shadow-lg transition-all duration-500 group">
-            <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors duration-300">
-                  Proem Sports
-                </h3>
-                <p className="text-lg text-gray-600 font-light">Associate Technical Product Manager</p>
-                <p className="text-sm font-mono text-gray-500 mt-2">MAY 2024 – PRESENT</p>
-              </div>
-              <Button 
-                variant="ghost" 
-                className="text-gray-600 hover:text-gray-900 p-0 group-hover:translate-x-2 transition-all duration-300" 
-                asChild
-              >
-                <a href="/experience">
-                  <span className="mr-2">View Details</span>
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-            
-            <p className="text-gray-600 leading-relaxed font-light max-w-4xl">
-              Leading the development of next-generation data-driven solutions for the sports and entertainment industry, 
-              focusing on enhancing fan experiences and optimizing athlete performance through innovative technology platforms.
-            </p>
           </div>
         </div>
       </section>
@@ -166,7 +135,7 @@ const Home = () => {
               </a>
               
               <a 
-                href="https://www.linkedin.com/in/akshat-sidharth/" 
+                href="https://www.linkedin.com/in/akshatsidharth" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="group flex flex-col items-center space-y-2 hover:scale-110 transition-all duration-300"
