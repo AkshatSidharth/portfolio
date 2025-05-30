@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="bg-mono-ghost py-12 mt-16 border-t border-mono-light">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-5">
+          <div className="md:col-span-8">
             <h4 className="font-heading text-xl font-medium mb-4">Akshat Sidharth</h4>
             <p className="text-sm text-mono-slate max-w-xs mb-6">
               Product Manager with expertise in customer data platforms, analytics, and digital transformation.
@@ -23,7 +23,7 @@ const Footer = () => {
                 <Mail size={20} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/akshat-sidharth/" 
+                href="https://www.linkedin.com/in/akshatsidharth/" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="text-mono-slate hover:text-mono-black transition-colors" 
@@ -39,17 +39,6 @@ const Footer = () => {
                 <Github size={20} />
               </a>
             </div>
-          </div>
-          
-          <div className="md:col-span-3">
-            <h5 className="font-medium text-sm uppercase tracking-wider text-mono-gray mb-4">Navigation</h5>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Home</Link></li>
-              <li><Link to="/experience" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Experience</Link></li>
-              <li><Link to="/freelance" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Freelance</Link></li>
-              <li><Link to="/case-studies" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Case Studies</Link></li>
-              <li><Link to="/projects" className="text-sm text-mono-slate hover:text-mono-black transition-colors">Projects</Link></li>
-            </ul>
           </div>
           
           <div className="md:col-span-4">
