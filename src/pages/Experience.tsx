@@ -5,6 +5,21 @@ import { Button } from "@/components/ui/button";
 
 const experiences = [
   {
+    id: "kenko-ai",
+    company: "Kenko AI",
+    role: "Product Manager",
+    location: "Bengaluru, India",
+    period: "January 2025 – Present",
+    summary: "At Kenko AI, I drive AI-powered product innovation and operational efficiency across customer support, onboarding, and CRM-integrated strategic tools. My work focuses on scaling business impact through automation, data-driven decision-making, and cross-functional delivery alignment.",
+    achievements: [
+      "AI-Powered Support Optimization: Restructured Intercom's Fin AI knowledge base and updated 50+ external help articles, increasing AI-agent resolution rate from 35% to 71%. Reduced live agent load significantly and improved customer satisfaction.",
+      "In-House LMS Development: Designed and launched an internal LMS using Moodle, streamlining onboarding and training processes. Reduced new hire ramp-up time by 40% and ensured scalable knowledge transfer across CX, product, and technical teams.",
+      "Cross-Functional Delivery Alignment: Established structured planning rituals, risk tracking systems, and shared program dashboards—enabling 100% on-time execution of quarterly feature releases.",
+      "AI BGC Co-Pilot: Led development of a LangChain and Claude/OpenAI-powered CRM-integrated co-pilot for strategic support and automation. Achieved 95% ROI recovery on BGC operations, generated $25,000 net-new revenue, and scaled strategic coverage 10x without increasing headcount."
+    ],
+    tools: ["JIRA", "Intercom", "Figma", "Amplitude", "Looker", "Tableau", "Hotjar", "Moodle", "LangChain", "OpenAI", "Claude"]
+  },
+  {
     id: "proem-sports",
     company: "Proem Sports",
     role: "Associate Technical Product Manager",
