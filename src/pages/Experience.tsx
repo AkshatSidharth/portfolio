@@ -9,7 +9,7 @@ const experiences = [
     company: "Proem Sports",
     role: "Associate Technical Product Manager",
     location: "Bengaluru, India",
-    period: "May 2024 – Present",
+    period: "May 2024 – January 2025",
     summary: "At Proem Sports, I lead the development of next-generation data-driven solutions for the sports and entertainment industry. My role centers on enhancing fan experiences, optimizing athlete performance, and supporting global sports brands in their digital transformation journey.",
     achievements: [
       "Customer Data & Engagement Platform: Conceptualized and launched an omnichannel engagement platform that unified fragmented fan data into a single view. Enabled marketing teams to build automated, targeted campaigns—resulting in a 30% increase in fan engagement and 16% faster event processing.",
